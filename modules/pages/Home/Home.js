@@ -4,7 +4,19 @@ import Body from '../../common/Body/Body'
 import Footer from '../../common/Footer/Footer'
 
 class Home extends React.Component {
-	render () {
+  render() {
+    return (
+			<div>
+				test
+			</div>
+		)
+  }
+}
+
+export default Home;
+/*
+class Home extends React.Component {
+	render() {
 		return (
 			<div>
 				<Header />
@@ -15,4 +27,4 @@ class Home extends React.Component {
 	}
 }
 
-export default Home;
+export default Home;*/

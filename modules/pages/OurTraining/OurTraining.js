@@ -8,7 +8,7 @@ class OurTraining  extends React.Component {
 		return (
 			<div>
 				<Header />
-				<Body />
+				<Body content="Our training content"/>
 				<Footer />
 			</div>
 		)

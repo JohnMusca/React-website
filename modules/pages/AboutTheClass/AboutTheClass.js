@@ -8,7 +8,7 @@ class AboutTheClass extends React.Component {
 		return (
 			<div>
 				<Header />
-				<Body />
+				<Body content="About the class content" />
 				<Footer />
 			</div>
 		)

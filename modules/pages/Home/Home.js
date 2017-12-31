@@ -8,7 +8,7 @@ class Home extends React.Component {
     return (
 			<div> 
 				<Header />
-				<Body />
+				<Body content="Home page content" />
 				<Footer />
 			</div>
 		)

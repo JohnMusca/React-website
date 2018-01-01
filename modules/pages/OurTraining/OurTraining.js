@@ -7,7 +7,7 @@ class OurTraining  extends React.Component {
 	render () {
 		return (
 			<div>
-				<Body content="Our training content"/>
+				<Body content="<p>Our training content</p>"/>
 				<Footer />
 			</div>
 		)

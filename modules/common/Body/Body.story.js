@@ -9,6 +9,6 @@ storiesOf('Body', module)
   		<Body />
 	))
 	.add('Body with test content', () => (
-			<Body content="Some test content" />
+			<Body content="<p>Some test content</p>" />
 	))
 ;

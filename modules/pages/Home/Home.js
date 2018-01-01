@@ -7,7 +7,7 @@ class Home extends React.Component {
   render() {
     return (
 			<div> 
-				<Body content="Home page content" />
+				<Body content="<p>Home page content</p>"/>
 				<Footer />
 			</div>
 		)

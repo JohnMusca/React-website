@@ -7,7 +7,7 @@ class Contact extends React.Component {
 	render() {
 		return (
 			<div>
-				<Body content="Contact us content" />
+				<Body content="<p>Contact us content</p>" />
 				<Footer />
 			</div>
 		)

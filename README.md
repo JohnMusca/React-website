@@ -1,5 +1,8 @@
 Base site template.
 
+requirements:
+node v8+
+
 usage:
 
 run:

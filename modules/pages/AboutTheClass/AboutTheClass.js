@@ -7,7 +7,6 @@ class AboutTheClass extends React.Component {
 	render () {
 		return (
 			<div>
-				<Header />
 				<Body content="About the class content" />
 				<Footer />
 			</div>

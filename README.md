@@ -9,7 +9,7 @@ storybook:
 npm run storybook (serves storybook on localhost:9001)
 
 test coverage:
-
+npm run test
 
 grunt prod:
 minize, uglify

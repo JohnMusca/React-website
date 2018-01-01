@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home component 1`] = `
+<div>
+  <div>
+    <p>
+      Home page content
+    </p>
+  </div>
+  <div>
+    <p>
+      Footer
+    </p>
+  </div>
+</div>
+`;

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AboutTheClass component 1`] = `
+<div>
+  <div>
+    <p>
+      About the class content
+    </p>
+  </div>
+  <div>
+    <p>
+      Footer
+    </p>
+  </div>
+</div>
+`;

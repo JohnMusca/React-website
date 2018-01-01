@@ -1,10 +1,13 @@
 import React from 'react';
 import Header from './Header';
 import renderer from 'react-test-renderer';
+import { BrowserRouter, Link } from 'react-router-dom'
 
-test('Link changes the class when hovered', () => {
+test('Header component', () => {
   const component = renderer.create(
-    <Link page="http://www.facebook.com">Facebook</Link>,
+    <BrowserRouter>
+		<Header />
+		</BrowserRouter>,
   );
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();

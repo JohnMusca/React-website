@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './Header';
+import ContactUsForm from './ContactUsForm';
 import renderer from 'react-test-renderer';
 import { BrowserRouter, Link } from 'react-router-dom'
 

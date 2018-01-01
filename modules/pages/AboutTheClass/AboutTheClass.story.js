@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { BrowserRouter } from 'react-router-dom'
 import AboutTheClass from './AboutTheClass'
 
-storiesOf('AboutTheClass', module)
-  .add('Default AboutTheClass', () => (
+storiesOf('Pages', module)
+  .add('AboutTheClass', () => (
   		<AboutTheClass />
 	));

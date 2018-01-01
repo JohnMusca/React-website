@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { BrowserRouter } from 'react-router-dom'
 import OurTraining from './OurTraining'
 
-storiesOf('OurTraining', module)
-  .add('Default OurTraining', () => (
+storiesOf('Pages', module)
+  .add('OurTraining', () => (
   		<OurTraining />
 	));

@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --inline --content-base .",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "test": "jest"
+    "test": "jest",
+		"testcoverage":"jest --coverage"
   },
   "author": "",
   "license": "ISC",

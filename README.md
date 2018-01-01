@@ -13,6 +13,7 @@ npm run storybook (serves storybook on localhost:9001)
 
 test coverage:
 npm run test (snapshot and enzyme tests)
+npm run testcoverage (test coverage analysis)
 
 grunt prod:
 minize, uglify

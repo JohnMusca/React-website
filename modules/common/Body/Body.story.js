@@ -7,5 +7,8 @@ import Body from './Body'
 storiesOf('Body', module)
   .add('Default Body', () => (
   		<Body />
-	));
-
+	))
+	.add('Body with test content', () => (
+			<Body content="Some test content" />
+	))
+;

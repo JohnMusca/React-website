@@ -2,11 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Form,FormGroup, FormControl, Button } from 'react-bootstrap';
 
+
 class ContactUsForm extends React.Component {
 
   constructor(props) {
     super(props);
     
+    this.styles = {
+      error: {
+        "color": "red",
+        "fontSize": "12px",
+        "marginTop": "5px"
+      }
+    };
+
     this.state = { email:   '',
                    message: '',
                    emailErrorMessage: '',
@@ -71,20 +80,21 @@ class ContactUsForm extends React.Component {
             Email
           </label>
           <input type="email" value={this.state.email} name="email" ref="email" onChange={this.handleInputChange} required/>
-          <div className="error" id="emailError">{this.state.emailErrorMessage}</div>
+          <div className="error" id="emailError" style={this.styles.error}>{this.state.emailErrorMessage}</div>
           <br />
   
           <label id="messageLabel">
             Message
           </label>
           <textarea rows="5" cols="30" value={this.state.message} name="message" ref="message" onChange={this.handleInputChange} required></textarea>
-          <div className="error" id="messageError">{this.state.messageErrorMessage}</div>
+          <div className="error" id="messageError" style={this.styles.error}>{this.state.messageErrorMessage}</div>
           <br />
 
           <Button onClick={this.handleInputChange.bind(this)}>Submit</Button>
       </form>
     )
   }
+
 }
 
 export default ContactUsForm;

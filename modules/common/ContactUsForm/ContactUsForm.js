@@ -2,19 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Form,FormGroup, FormControl, Button } from 'react-bootstrap';
 
+const styles = {
+          error: {
+            "color": "red",
+            "fontSize": "12px",
+            "marginTop": "5px"
+          }
+      };
 
 class ContactUsForm extends React.Component {
 
   constructor(props) {
     super(props);
     
-    this.styles = {
-      error: {
-        "color": "red",
-        "fontSize": "12px",
-        "marginTop": "5px"
-      }
-    };
 
     this.state = { email:   '',
                    message: '',
@@ -39,8 +39,32 @@ class ContactUsForm extends React.Component {
   }
 
   handleSubmit(e) {
-    console.log('form submit action');
+    e.preventDefault();
+  
+    if(!this.showFormErrors()) {
+      console.log('Form has errors, dont submit');
+      this.forceUpdate();
+    } else {
+      console.log('Form has no errors, submit');
+    }
+
   }	
+
+  showFormErrors() {
+    const inputs = document.querySelectorAll('input, textarea');
+
+    let isFormValid = true;
+    
+    inputs.forEach(input => {
+      input.classList.add('active');
+      
+      if (!this.showInputError(input.name)) {
+        isFormValid = false;
+      }
+    });
+
+    return isFormValid;
+  }
 
   showInputError(ref) {
     var validity = this.refs[ref].validity;
@@ -80,17 +104,17 @@ class ContactUsForm extends React.Component {
             Email
           </label>
           <input type="email" value={this.state.email} name="email" ref="email" onChange={this.handleInputChange} required/>
-          <div className="error" id="emailError" style={this.styles.error}>{this.state.emailErrorMessage}</div>
+          <div className="error" id="emailError" style={styles.error}>{this.state.emailErrorMessage}</div>
           <br />
   
           <label id="messageLabel">
             Message
           </label>
           <textarea rows="5" cols="30" value={this.state.message} name="message" ref="message" onChange={this.handleInputChange} required></textarea>
-          <div className="error" id="messageError" style={this.styles.error}>{this.state.messageErrorMessage}</div>
+          <div className="error" id="messageError" style={styles.error}>{this.state.messageErrorMessage}</div>
           <br />
 
-          <Button onClick={this.handleInputChange.bind(this)}>Submit</Button>
+          <Button onClick={this.handleSubmit}>Submit</Button>
       </form>
     )
   }

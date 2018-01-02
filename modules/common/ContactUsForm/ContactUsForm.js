@@ -8,7 +8,9 @@ class ContactUsForm extends React.Component {
     super(props);
     
     this.state = { email:   '',
-                   message: '' };
+                   message: '',
+                   emailErrorMessage: '',
+                   messageErrorMessage: '' };
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit      = this.handleSubmit.bind(this);
@@ -34,10 +36,9 @@ class ContactUsForm extends React.Component {
   showInputError(ref) {
     var validity = this.refs[ref].validity;
     var label    = document.getElementById(`${ref}Label`).textContent;
-    var error    = document.getElementById(`${ref}Error`).textContent;
+    var errorMessageField = `${ref}ErrorMessage`;
 
     const isEmail   = ref.indexOf('email') !== -1;
-    const isMessage = ref.indexOf('message') !== -1;
 
     //set custom validity for email, doesn't work on all browsers
     if(isEmail) {
@@ -51,17 +52,15 @@ class ContactUsForm extends React.Component {
   
     if (!validity.valid) {
       if (validity.valueMissing) {
-        error = `${label} is a required field`; 	
-        console.log(error);
+        this.state[errorMessageField] = `${label} is a required field`; 	
       } else if (isEmail && !validity.email) {
-        error = `${label} is not a valid email address`; 
-        console.log(error);
+        this.state[errorMessageField] = `${label} is not a valid email address`; 
       } 
 
       return false;
     }
 
-    error = '';
+    this.state[errorMessageField] = '';
     return true;
   }
 
@@ -72,14 +71,14 @@ class ContactUsForm extends React.Component {
             Email
           </label>
           <input type="email" value={this.state.email} name="email" ref="email" onChange={this.handleInputChange} required/>
-          <div className="error" id="emailError"></div>
+          <div className="error" id="emailError">{this.state.emailErrorMessage}</div>
           <br />
   
           <label id="messageLabel">
             Message
           </label>
           <textarea rows="5" cols="30" value={this.state.message} name="message" ref="message" onChange={this.handleInputChange} required></textarea>
-          <div className="error" id="messageError"></div>
+          <div className="error" id="messageError">{this.state.messageErrorMessage}</div>
           <br />
 
           <Button onClick={this.handleInputChange.bind(this)}>Submit</Button>

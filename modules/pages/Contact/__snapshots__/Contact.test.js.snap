@@ -8,6 +8,85 @@ exports[`Contact component 1`] = `
     </p>
   </div>
   <div>
+    <div
+      id="thankYouMessage"
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    >
+      <p>
+        Thanks for submitting your enquiry. We'll get back to you shortly
+      </p>
+    </div>
+    <form
+      id="form"
+    >
+      <label
+        id="emailLabel"
+      >
+        Email
+      </label>
+      <input
+        name="email"
+        onChange={[Function]}
+        required={true}
+        type="email"
+        value=""
+      />
+      <div
+        className="error"
+        id="emailError"
+        style={
+          Object {
+            "color": "red",
+            "fontSize": "12px",
+            "marginTop": "5px",
+          }
+        }
+      >
+        
+      </div>
+      <br />
+      <label
+        id="messageLabel"
+      >
+        Message
+      </label>
+      <textarea
+        cols="30"
+        name="message"
+        onChange={[Function]}
+        required={true}
+        rows="5"
+        value=""
+      />
+      <div
+        className="error"
+        id="messageError"
+        style={
+          Object {
+            "color": "red",
+            "fontSize": "12px",
+            "marginTop": "5px",
+          }
+        }
+      >
+        
+      </div>
+      <br />
+      <button
+        className="btn btn-default"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+  <div>
     <p>
       Footer
     </p>

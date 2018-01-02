@@ -7,7 +7,10 @@ const styles = {
             "color": "red",
             "fontSize": "12px",
             "marginTop": "5px"
-          }
+          },
+          hidden: {
+            "display": "none"
+          } 
       };
 
 class ContactUsForm extends React.Component {
@@ -40,13 +43,20 @@ class ContactUsForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-  
-    if(!this.showFormErrors()) {
-      console.log('Form has errors, dont submit');
-      this.forceUpdate();
-    } else {
+ 
+    var isValid = this.showFormErrors();
+ 
+    if(isValid) {
       console.log('Form has no errors, submit');
+
+      document.getElementById('thankYouMessage').style="display:inline;"
+      document.getElementById('form').style="display:none;"
+
+      console.log('submitted name: ' + this.refs.email.value);
+      console.log('submitted message: ' + this.refs.message.value);
     }
+
+    this.forceUpdate();
 
   }	
 
@@ -99,23 +109,28 @@ class ContactUsForm extends React.Component {
 
   render() {
     return (
-      <form>
-          <label id="emailLabel">
-            Email
-          </label>
-          <input type="email" value={this.state.email} name="email" ref="email" onChange={this.handleInputChange} required/>
-          <div className="error" id="emailError" style={styles.error}>{this.state.emailErrorMessage}</div>
-          <br />
-  
-          <label id="messageLabel">
-            Message
-          </label>
-          <textarea rows="5" cols="30" value={this.state.message} name="message" ref="message" onChange={this.handleInputChange} required></textarea>
-          <div className="error" id="messageError" style={styles.error}>{this.state.messageErrorMessage}</div>
-          <br />
+      <div>
+        <div id="thankYouMessage" style={styles.hidden}>
+          <p>Thanks for submitting your enquiry. We'll get back to you shortly</p>
+        </div> 
+        <form id="form">
+            <label id="emailLabel">
+              Email
+            </label>
+            <input type="email" value={this.state.email} name="email" ref="email" onChange={this.handleInputChange} required/>
+            <div className="error" id="emailError" style={styles.error}>{this.state.emailErrorMessage}</div>
+            <br />
+    
+            <label id="messageLabel">
+              Message
+            </label>
+            <textarea rows="5" cols="30" value={this.state.message} name="message" ref="message" onChange={this.handleInputChange} required></textarea>
+            <div className="error" id="messageError" style={styles.error}>{this.state.messageErrorMessage}</div>
+            <br />
 
-          <Button onClick={this.handleSubmit}>Submit</Button>
-      </form>
+            <Button onClick={this.handleSubmit}>Submit</Button>
+        </form>
+      </div>
     )
   }
 

@@ -1,8 +1,15 @@
 import React from 'react'
 import { BrowserRouter, Link } from 'react-router-dom'
 
+/**
+* Header component which contains the site menu and links.
+*
+* Props:      None
+* 
+* State vars: None
+*/
 class Header extends React.Component {
-	render() {
+	render() { 
 		return (
 			<div>
 				<h1>Header</h1>

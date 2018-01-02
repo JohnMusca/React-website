@@ -32,9 +32,9 @@ class ContactUsForm extends React.Component {
   }	
 
   showInputError(ref) {
-    const validity = this.refs[ref].validity;
-    const label    = document.getElementById(`${ref}Label`).textContent;
-    const error    = document.getElementById(`${ref}Error`).textContent;
+    var validity = this.refs[ref].validity;
+    var label    = document.getElementById(`${ref}Label`).textContent;
+    var error    = document.getElementById(`${ref}Error`).textContent;
 
     const isEmail   = ref.indexOf('email') !== -1;
     const isMessage = ref.indexOf('message') !== -1;
@@ -51,17 +51,17 @@ class ContactUsForm extends React.Component {
   
     if (!validity.valid) {
       if (validity.valueMissing) {
-        error.textContent = `${label} is a required field`; 	
+        error = `${label} is a required field`; 	
         console.log('empty' + label);
       } else if (isEmail && validity.email) {
-        error.textContent = `${label} is not a valid email address`; 
+        error = `${label} is not a valid email address`; 
         console.log('invalid' + label);
       } 
 
       return false;
     }
 
-    error.textContent = '';
+    error = '';
     return true;
   }
 

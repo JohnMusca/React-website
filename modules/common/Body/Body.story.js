@@ -6,9 +6,9 @@ import Body from './Body'
 
 storiesOf('Body', module)
   .add('Default Body', () => (
-  		<Body />
-	))
-	.add('Body with test content', () => (
-			<Body content="<p>Some test content</p>" />
-	))
+      <Body />
+  ))
+  .add('Body with test content', () => (
+      <Body content="<p>Some test content</p>" />
+  ))
 ;

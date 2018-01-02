@@ -5,7 +5,7 @@ import { BrowserRouter, Link } from 'react-router-dom'
 
 test('Contact component', () => {
   const component = renderer.create(
-		<Contact />
+    <Contact />
   );
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();

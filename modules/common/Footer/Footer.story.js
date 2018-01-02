@@ -6,5 +6,5 @@ import Footer from './Footer'
 
 storiesOf('Footer', module)
   .add('Default Footer', () => (
-  		<Footer />
-	));
+      <Footer />
+  ));

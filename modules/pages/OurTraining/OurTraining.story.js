@@ -6,5 +6,5 @@ import OurTraining from './OurTraining'
 
 storiesOf('Pages', module)
   .add('OurTraining', () => (
-  		<OurTraining />
-	));
+      <OurTraining />
+  ));

@@ -6,5 +6,5 @@ import Home from './Home'
 
 storiesOf('Pages', module)
   .add('Home', () => (
-  		<Home />
-	));
+      <Home />
+  ));

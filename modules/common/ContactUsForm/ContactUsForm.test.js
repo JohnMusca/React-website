@@ -5,7 +5,7 @@ import { BrowserRouter, Link } from 'react-router-dom'
 
 test('ContactUsForm component', () => {
   const component = renderer.create(
-		<ContactUsForm />
+    <ContactUsForm />
   );
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();

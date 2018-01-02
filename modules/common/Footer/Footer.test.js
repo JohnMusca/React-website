@@ -5,7 +5,7 @@ import { BrowserRouter, Link } from 'react-router-dom'
 
 test('Footer component', () => {
   const component = renderer.create(
-		<Footer />
+    <Footer />
   );
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();

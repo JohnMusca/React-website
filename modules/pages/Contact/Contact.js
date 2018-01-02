@@ -7,15 +7,15 @@ import ContactUsForm from '../../common/ContactUsForm/ContactUsForm'
 var content = "<p>Contact us content</p>";
 
 class Contact extends React.Component {
-	render() {
-		return (
-			<div>
-				<Body content={content}/>
-				<ContactUsForm />
-				<Footer />
-			</div>
-		)
-	}
+  render() {
+    return (
+      <div>
+        <Body content={content}/>
+        <ContactUsForm />
+        <Footer />
+      </div>
+    )
+  }
 }
 
 export default Contact;

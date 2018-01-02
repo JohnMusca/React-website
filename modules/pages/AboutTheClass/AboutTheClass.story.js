@@ -6,5 +6,5 @@ import AboutTheClass from './AboutTheClass'
 
 storiesOf('Pages', module)
   .add('AboutTheClass', () => (
-  		<AboutTheClass />
-	));
+      <AboutTheClass />
+  ));

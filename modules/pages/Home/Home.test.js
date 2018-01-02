@@ -5,7 +5,7 @@ import { BrowserRouter, Link } from 'react-router-dom'
 
 test('Home component', () => {
   const component = renderer.create(
-		<Home />
+    <Home />
   );
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();

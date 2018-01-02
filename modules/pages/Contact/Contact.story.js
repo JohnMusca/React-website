@@ -6,5 +6,5 @@ import Contact from './Contact'
 
 storiesOf('Pages', module)
   .add('Contact', () => (
-  		<Contact />
-	));
+      <Contact />
+  ));

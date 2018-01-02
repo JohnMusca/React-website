@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 storiesOf('App', module)
   .add('Base App', () => (
-		<BrowserRouter>
-			<App />
-		</BrowserRouter>
-	));
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  ));

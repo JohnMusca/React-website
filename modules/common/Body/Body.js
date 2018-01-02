@@ -6,24 +6,24 @@ var HtmlToReactParser = HtmlToReact.Parser;
 var htmlToReactParser = new HtmlToReactParser();
 
 class Body extends React.Component {
-	render() {
+  render() {
 
-	var reactElement = htmlToReactParser.parse(this.props.content.toString());
+  var reactElement = htmlToReactParser.parse(this.props.content.toString());
 
-		return (
-			<div>
-				{reactElement}
-			</div>
-		)
-	}
+    return (
+      <div>
+        {reactElement}
+      </div>
+    )
+  }
 }
 
 Body.defaultProps = {
-	content: '<p>Defualt body content</p>'
+  content: '<p>Defualt body content</p>'
 }
 
 Body.propTypes = {
-	content: PropTypes.string
+  content: PropTypes.string
 }
 
 export default Body;

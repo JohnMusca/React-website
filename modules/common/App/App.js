@@ -3,14 +3,14 @@ import Header from '../Header/Header'
 import Routes from '../Routes/Routes'
 
 class App extends React.Component {
-	render() {
+  render() {
   return (
-		<div>
-			<Header />
-    	<Routes />
-  	</div>
-		)
-	}
+    <div>
+      <Header />
+      <Routes />
+    </div>
+    )
+  }
 }
 
 export default App

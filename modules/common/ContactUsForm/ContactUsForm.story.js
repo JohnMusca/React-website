@@ -6,5 +6,5 @@ import ContactUsForm from './ContactUsForm'
 
 storiesOf('ContactUsForm', module)
   .add('Default Contact Us Form', () => (
-  		<ContactUsForm />
-	));
+      <ContactUsForm />
+  ));

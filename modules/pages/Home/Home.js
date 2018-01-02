@@ -8,11 +8,11 @@ var content = "<p>Home page content</p>";
 class Home extends React.Component {
   render() {
     return (
-			<div> 
-				<Body content={content}/>
-				<Footer />
-			</div>
-		)
+      <div> 
+        <Body content={content}/>
+        <Footer />
+      </div>
+    )
   }
 }
 

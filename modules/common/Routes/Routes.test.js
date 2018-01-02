@@ -6,8 +6,8 @@ import { BrowserRouter, Link } from 'react-router-dom'
 test('Route component', () => {
   const component = renderer.create(
     <BrowserRouter>
-		<Routes />
-		</BrowserRouter>,
+    <Routes />
+    </BrowserRouter>,
   );
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();

@@ -11,15 +11,20 @@ import { BrowserRouter, Link } from 'react-router-dom'
 class Header extends React.Component {
 	render() { 
 		return (
-			<div>
-				<h1>Header</h1>
-				<ul role="nav">
-					<li><Link to="/">Home</Link></li>
-					<li><Link to="/our_training">Our training</Link></li>
-					<li><Link to="/about_the_class">About the class</Link></li>
-					<li><Link to="/contact">Contact</Link></li>
-				</ul>
-			</div>
+  <header>
+    <div id="wrap">
+          <a href="index.html" title="Home"><img className="logo" src="/public/img/logo.png" alt="Logo"/></a>
+          <a>This is a test</a>
+        <nav id="nav">
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/our_training">Our training</Link></li>
+            <li><Link to="/about_the_class">About the class</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+          </ul>
+        </nav>
+    </div>
+  </header>
 		)
 	}
 }

@@ -14,9 +14,9 @@ const dt = new Date();
 class Footer extends React.Component {
   render() {
     return (
-      <div>
-        <p>&copy; {dt.getFullYear()} Bussiness Name</p>
-      </div>
+      <footer>  
+        <p>&copy; {dt.getFullYear()} Buk Sing Melbourne</p>
+      </footer>
     )
   }
 }

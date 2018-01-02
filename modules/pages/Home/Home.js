@@ -18,7 +18,14 @@ class Home extends React.Component {
   render() {
     return (
       <div> 
-        <Body content={content}/>
+ 
+        <div class="hero-image-home">
+        </div>
+
+        <div class="main">
+             <Body content={content}/>
+        </div>
+        
         <Footer />
       </div>
     )

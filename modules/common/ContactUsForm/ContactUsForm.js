@@ -2,32 +2,59 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Form,FormGroup, FormControl, Button } from 'react-bootstrap';
 
+//Styles used by html input elements
 const styles = {
-          error: {
-            "color": "red",
-            "fontSize": "12px",
+          error:  {
+            "color"    : "red",
+            "fontSize" : "12px",
             "marginTop": "5px"
           },
           hidden: {
-            "display": "none"
+            "display"  : "none"
           } 
       };
 
+//The email validation regular expression we check against later
+const emailRegEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+/**
+* Contact us form component used to render and process the contact us form.
+*
+* Props: None
+*
+* State vars:
+* @String email   The email address entered by the user.
+* @String message The message entered by the user.
+* @String emailErrorMessage The email error. This is updated if there's an error or not.
+* @String messageErrorMessage The message error. This is updated if there's an error or not.1
+*/
 class ContactUsForm extends React.Component {
 
+  /**
+  * Default constructor. Sets up the state and methods we need bound.
+  */
   constructor(props) {
     super(props);
     
 
-    this.state = { email:   '',
-                   message: '',
-                   emailErrorMessage: '',
+    this.state = { email              : '',
+                   message            : '',
+                   emailErrorMessage  : '',
                    messageErrorMessage: '' };
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit      = this.handleSubmit.bind(this);
   }
 
+  /**
+  * Method to handle the onChange events.
+  * It calls the showInputError to validate the error input as the user 
+  * enters a value.
+  *
+  * @param Object event The event to get the target element.
+  * 
+  * @return void
+  */
   handleInputChange(event) { 
 
     const target = event.target;
@@ -41,8 +68,18 @@ class ContactUsForm extends React.Component {
     this.showInputError(target.name);
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
+  /**
+  * Method to handle the subimt events.
+  * It checks if the form is valid by calling the showFormErrors method.
+  * It then forces an update so either we show the error messages or the
+  * thankyou message.
+  * 
+  * @param Object event The event to get the target element.
+  * 
+  * @return void
+  */
+  handleSubmit(event) {
+    event.preventDefault();
  
     var isValid = this.showFormErrors();
  
@@ -60,6 +97,13 @@ class ContactUsForm extends React.Component {
 
   }	
 
+  /**
+  * Shows the form errors (triggered by an onclick of the form).
+  * It gets all the inputs and text areas (add more if you need), and 
+  * uses the showInputError method to validate each field. 
+  * 
+  * @return Boolean Returns true if the form is valid, otherwise false if an error is found.
+  */
   showFormErrors() {
     const inputs = document.querySelectorAll('input, textarea');
 
@@ -76,6 +120,13 @@ class ContactUsForm extends React.Component {
     return isFormValid;
   }
 
+  /**
+  * showInputError method which shows the errors associated with the 
+  * ref passed in. Called by onChange event for each input and showFormErrors
+  * which is called by handleSubmit.
+  * 
+  * @param ref string The reference of the input which called it.
+  */
   showInputError(ref) {
     var validity = this.refs[ref].validity;
     var label    = document.getElementById(`${ref}Label`).textContent;
@@ -85,14 +136,15 @@ class ContactUsForm extends React.Component {
 
     //set custom validity for email, doesn't work on all browsers
     if(isEmail) {
-      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      if(!re.test(this.refs.email.value.toLowerCase())) {
+      if(!emailRegEx.test(this.refs.email.value.toLowerCase())) {
         validity.email = false;
       } else {
         validity.email = true;
       }
     }
-  
+ 
+    //if our form isn't valid, then find what the error is and return the correct
+    //message to the user. 
     if (!validity.valid) {
       if (validity.valueMissing) {
         this.state[errorMessageField] = `${label} is a required field`; 	
@@ -103,10 +155,18 @@ class ContactUsForm extends React.Component {
       return false;
     }
 
+    //if no errors, blank out the error messages
     this.state[errorMessageField] = '';
     return true;
   }
 
+  /**
+  * Render method. This is used to render the form and the thankyou message.
+  * Onchange events on the inputs validate the inputs via handleInputChange method and
+  * there's a handleSubmit event.
+  *
+  * @return void
+  */
   render() {
     return (
       <div>
@@ -120,14 +180,12 @@ class ContactUsForm extends React.Component {
             <input type="email" value={this.state.email} name="email" ref="email" onChange={this.handleInputChange} required/>
             <div className="error" id="emailError" style={styles.error}>{this.state.emailErrorMessage}</div>
             <br />
-    
             <label id="messageLabel">
               Message
             </label>
             <textarea rows="5" cols="30" value={this.state.message} name="message" ref="message" onChange={this.handleInputChange} required></textarea>
             <div className="error" id="messageError" style={styles.error}>{this.state.messageErrorMessage}</div>
             <br />
-
             <Button onClick={this.handleSubmit}>Submit</Button>
         </form>
       </div>

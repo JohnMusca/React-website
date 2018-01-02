@@ -43,19 +43,19 @@ class ContactUsForm extends React.Component {
     if(isEmail) {
       var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       if(!re.test(this.refs.email.value.toLowerCase())) {
-        console.log('invalid email');
+        validity.email = false;
       } else {
-        console.log('valid email');
+        validity.email = true;
       }
     }
   
     if (!validity.valid) {
       if (validity.valueMissing) {
         error = `${label} is a required field`; 	
-        console.log('empty' + label);
-      } else if (isEmail && validity.email) {
+        console.log(error);
+      } else if (isEmail && !validity.email) {
         error = `${label} is not a valid email address`; 
-        console.log('invalid' + label);
+        console.log(error);
       } 
 
       return false;

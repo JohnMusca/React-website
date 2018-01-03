@@ -4,7 +4,7 @@ import Body from '../../common/Body/Body'
 import Footer from '../../common/Footer/Footer'
 
 
-var instagram_link = "<iframe src='//instagram.com/p/VID_ID/embed' width='200' height='300' frameborder='0' scrolling='no' allowtransperency='true'></iframe>";
+var instagram_link = "<span style='padding-left:10px;'><iframe src='//instagram.com/p/VID_ID/embed' width='230' height='300' frameborder='0' scrolling='no' allowtransperency='true'></iframe></span>";
 
 //Content passed into body component.
 var content="<p>Our Training comprises a variety and combination of:</p>" +
@@ -23,7 +23,11 @@ var content="<p>Our Training comprises a variety and combination of:</p>" +
               "<li>Physical Fitness and Well Being;</li>" + 
               "<li>Flexibility, Balance and Co-Ordination.</li>" + 
             "</ul>" + 
-            "<p>" + instagram_link.replace('VID_ID', 'BZe5g8QjVyw') + "</p>";
+            "<p>" + 
+            instagram_link.replace('VID_ID', 'BZe5g8QjVyw') + 
+            instagram_link.replace('VID_ID', 'BcUS3zMDONZ') + 
+            instagram_link.replace('VID_ID', 'BZXa8wgjSr7') + 
+            "</p>";
 
 /**
 * Our Training page component used to render the page.
@@ -33,6 +37,13 @@ var content="<p>Our Training comprises a variety and combination of:</p>" +
 * State vars: None
 */
 class OurTraining  extends React.Component {
+
+  constructor(props) {
+    super(props);
+    
+    $('.ehCallToAction').hide();
+  }
+  
   render () {
     return (
       <div>  

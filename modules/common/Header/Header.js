@@ -14,8 +14,7 @@ class Header extends React.Component {
   <header>
     <div id="wrap">
           <a href="index.html" title="Home"><img className="logo" src="/public/img/logo.png" alt="Logo"/></a>
-          <a>This is a test</a>
-        <nav id="nav">
+          <nav id="nav">
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/our_training">Our training</Link></li>

@@ -19,7 +19,11 @@ class Body extends React.Component {
   var reactElement = htmlToReactParser.parse(this.props.content.toString());
 
     return (
-      <div>
+      <div class="main">
+        <h1>
+        Buk Sing Choy Lay Fut
+        </h1>
+
         {reactElement}
       </div>
     )

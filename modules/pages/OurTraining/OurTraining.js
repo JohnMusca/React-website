@@ -16,7 +16,9 @@ var content="<p>Our training content</p>";
 class OurTraining  extends React.Component {
   render () {
     return (
-      <div>
+      <div>  
+
+      <div class="hero-image-training"></div>
         <Body content={content}/>
         <Footer />
       </div>

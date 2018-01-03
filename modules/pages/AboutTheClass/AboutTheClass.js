@@ -17,6 +17,7 @@ class AboutTheClass extends React.Component {
   render () {
     return (
       <div>
+        <div class="hero-image-about"></div>
         <Body content={content} />
         <Footer />
       </div>

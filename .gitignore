@@ -1,5 +1,4 @@
 /node_modules/
 /coverage/
 *.swp
-config.json
-app.yaml
+/src/modules/config/config.json

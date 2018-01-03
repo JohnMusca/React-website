@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Form,FormGroup, FormControl, Button } from 'react-bootstrap';
 
+//Config object used for emailjs vars
+const Config = require('../../../config.json');
+
 //Styles used by html input elements
 const styles = {
           error:  {
@@ -84,13 +87,13 @@ class ContactUsForm extends React.Component {
     var isValid = this.showFormErrors();
  
     if(isValid) {
-      console.log('Form has no errors, submit');
-
       document.getElementById('thankYouMessage').style="display:inline;"
       document.getElementById('form').style="display:none;"
 
-      console.log('submitted name: ' + this.refs.email.value);
-      console.log('submitted message: ' + this.refs.message.value);
+      emailjs.init(Config.emailjs_user);
+      emailjs.send(Config.emailjs_service_id, Config.emailjs_template_id,
+                  {email  : this.refs.email.value, 
+                   message: this.refs.email.message});
     }
 
     this.forceUpdate();

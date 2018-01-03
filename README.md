@@ -7,6 +7,10 @@
 
 ### run
 - npm start (serve site on localhost:8080)
+- Actual site needs config.json with the following values:
+-- emailjs_user
+-- emailjs_service_id
+-- emailjs_template_id 
 
 ### storybook
 - npm run storybook (serves storybook on localhost:9001)

@@ -19,9 +19,9 @@ class Routes extends React.Component {
     return (
         <div>   
           <Route exact path="/" component={Home}/>
-          <Route path="/our_training" component={OurTraining}/>
-          <Route path="/about_the_class" component={AboutTheClass}/>
-          <Route path="/contact" component={Contact}/>
+          <Route path="/our_training/" component={OurTraining}/>
+          <Route path="/about_us/" component={AboutTheClass}/>
+          <Route path="/contact_us/" component={Contact}/>
         </div>
     )
   }

@@ -10,6 +10,10 @@
 - Actual site needs config.json with the following values:
 -- { "emailjs_user": "", "emailjs_service_id":"", "emailjs_template_id":""} 
 
+### content
+content is stored in json data files as html:
+src/modules/config
+
 ### storybook
 - npm run storybook (serves storybook on localhost:9001)
 

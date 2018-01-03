@@ -10,12 +10,12 @@ var content = "<p>The Buk Sing Choy Lay Fut Kung Fu School services the Northern
               "<p><img src='/public/img/mal_small.jpg' /></p>" +
               "<p>Small class sizes provide a high degree of pastoral care and teaching is conducted in a non violent non threatening manner with particular regard to humility and respect.</p>" +
               "<p>Dress consists of: gym shoes, T Shirt (black preferable) and long Black Martial Arts pants (shorts are acceptable initially).</p>" +
-              "<p>Cost to be instructed in Buk Sing Choy Lay Fut Kung Fu comprises:" +
+              "<p>Cost to be instructed in Buk Sing Choy Lay Fut Kung Fu comprises:</p>" +
               "<ul>" +
                 "<li>Joining fee which includes cost of Buk Sing Choy Lay Fut training Shirt;</li>" +
                 "<li>Monthly instruction fee;</li>" +
                 "<li>No grading or other ongoing fees.</li>" +
-              "</ul></p>" +
+              "</ul>" +
               "<p><img src='/public/img/john_bag_small.jpg' /></p>" +
               "<p>Sifu Gary Mallia welcomes you to your Free Introductory Class and looks forward to assisting with what is considered a significant life changing experience.</p>";
 
@@ -30,7 +30,7 @@ class AboutTheClass extends React.Component {
   render () {
     return (
       <div>
-        <div  class="hero-image-about"></div>
+        <div  className="hero-image-about"></div>
         <Body heading="About the class" content={content} />
         <Footer />
       </div>

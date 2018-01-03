@@ -20,7 +20,7 @@ class Body extends React.Component {
   var reactElement = htmlToReactParser.parse(this.props.content.toString());
 
     return (
-      <div class="main">
+      <div className="main">
         <h1>
         {this.props.heading} 
         </h1>

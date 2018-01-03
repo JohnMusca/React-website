@@ -19,11 +19,11 @@ class Contact extends React.Component {
   render() {
     return (
       <div>
-        <div class="hero-image-home"></div>
+        <div className="hero-image-home"></div>
         <Body heading="Contact Us" content={content}/>
         <ContactUsForm />
        
-        <div class="main">
+        <div className="main">
         <h1>Our address</h1>
         <p>74 Melville Road, Brunswick West VIC 3055</p>      
 

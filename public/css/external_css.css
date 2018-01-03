@@ -1,3 +1,7 @@
+#ehCallToAction {
+  display:none;
+}
+
 *, *:after, *:before {  
   -webkit-box-sizing: border-box; 
   -moz-box-sizing: border-box; 
@@ -48,7 +52,7 @@ hr {
 /* =TYPOGRAPHY
 -------------------------------------------------------------- */
 
-p {
+p, ul {
   color: #666666;
   margin-bottom: 20px;
   font-size: 13px;

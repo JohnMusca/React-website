@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Link } from 'react-router-dom'
+import { BrowserRouter, NavLink } from 'react-router-dom'
 
 /**
 * Header component which contains the site menu and links.
@@ -16,10 +16,10 @@ class Header extends React.Component {
           <a href="index.html" title="Home"><img className="logo" src="/public/img/logo.png" alt="Logo"/></a>
           <nav id="nav">
           <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/our_training">Our training</Link></li>
-            <li><Link to="/about_the_class">About the class</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
+            <li><NavLink exact={true}  to="/" activeClassName="selected">Home</NavLink></li>
+            <li><NavLink to="/our_training" activeClassName="selected">Our training</NavLink></li>
+            <li><NavLink to="/about_the_class" activeClassName="selected">About the class</NavLink></li>
+            <li><NavLink to="/contact" activeClassName="selected">Contact</NavLink></li>
             <li><a href="https://www.instagram.com/buksingclfmelb/" title="Instagram" target="_blank">
               <img className="instagram-header-icon" src="/public/img/instagram-header-icon.png" alt="Instagram Icon" /></a></li>
           </ul>

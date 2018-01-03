@@ -23,7 +23,7 @@ class Home extends React.Component {
   render() {
     return (
       <div> 
-        <div class="hero-image-home"></div>
+        <div className="hero-image-home"></div>
         <Body heading="Buk Sing Choy Lay Fut" content={content}/>
         <Footer />
       </div>

@@ -40,8 +40,6 @@ class OurTraining  extends React.Component {
 
   constructor(props) {
     super(props);
-    
-    $('.ehCallToAction').hide();
   }
   
   render () {

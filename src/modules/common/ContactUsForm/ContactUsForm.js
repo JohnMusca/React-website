@@ -1,9 +1,10 @@
+//eslint-disable jsx-a11y/alt-text
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Form,FormGroup, FormControl, Button } from 'react-bootstrap';
 
 //Config object used for emailjs vars
-const Config = require('../../../config.json');
+const Config = require('../../config/config.json');
 
 //Styles used by html input elements
 const styles = {
@@ -39,7 +40,6 @@ class ContactUsForm extends React.Component {
   constructor(props) {
     super(props);
     
-
     this.state = { email              : '',
                    message            : '',
                    emailErrorMessage  : '',
@@ -71,6 +71,7 @@ class ContactUsForm extends React.Component {
     this.showInputError(target.name);
   }
 
+
   /**
   * Method to handle the subimt events.
   * It checks if the form is valid by calling the showFormErrors method.
@@ -90,8 +91,8 @@ class ContactUsForm extends React.Component {
       document.getElementById('thankYouMessage').style="display:inline;"
       document.getElementById('form').style="display:none;"
 
-      emailjs.init(Config.emailjs_user);
-      emailjs.send(Config.emailjs_service_id, Config.emailjs_template_id,
+      window.emailjs.init(Config.emailjs_user);
+      window.emailjs.send(Config.emailjs_service_id, Config.emailjs_template_id,
                   {email  : this.refs.email.value, 
                    message: this.refs.message.value});
     }
@@ -197,5 +198,6 @@ class ContactUsForm extends React.Component {
   }
 
 }
+
 
 export default ContactUsForm;

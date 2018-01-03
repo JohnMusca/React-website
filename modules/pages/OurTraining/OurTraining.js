@@ -17,9 +17,8 @@ class OurTraining  extends React.Component {
   render () {
     return (
       <div>  
-
       <div class="hero-image-training"></div>
-        <Body content={content}/>
+        <Body heading="Our training" content={content}/>
         <Footer />
       </div>
     )

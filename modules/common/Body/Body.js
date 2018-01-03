@@ -10,6 +10,7 @@ var htmlToReactParser = new HtmlToReactParser();
 *
 * Props: 
 * @String content A content string which is rendered in the body of the page
+* @String heading A content string which is rendered above the body of the page
 *
 * State vars: None
 */
@@ -21,7 +22,7 @@ class Body extends React.Component {
     return (
       <div class="main">
         <h1>
-        Buk Sing Choy Lay Fut
+        {this.props.heading} 
         </h1>
 
         {reactElement}
@@ -31,11 +32,13 @@ class Body extends React.Component {
 }
 
 Body.defaultProps = {
-  content: '<p>Defualt body content</p>'
+  content: '<p>Defualt body content</p>',
+  heading: 'Buk Sing Choy Lay Fut'
 }
 
 Body.propTypes = {
-  content: PropTypes.string
+  content: PropTypes.string,
+  heading: PropTypes.string
 }
 
 export default Body;

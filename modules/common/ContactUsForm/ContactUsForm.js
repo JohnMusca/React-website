@@ -105,7 +105,7 @@ class ContactUsForm extends React.Component {
   * @return Boolean Returns true if the form is valid, otherwise false if an error is found.
   */
   showFormErrors() {
-    const inputs = document.querySelectorAll('input, textarea');
+    const inputs = document.querySelectorAll('input[type=email], textarea');
 
     let isFormValid = true;
     
@@ -169,24 +169,25 @@ class ContactUsForm extends React.Component {
   */
   render() {
     return (
-      <div>
+      <div className="main">
         <div id="thankYouMessage" style={styles.hidden}>
           <p>Thanks for submitting your enquiry. We'll get back to you shortly</p>
         </div> 
-        <form id="form">
-            <label id="emailLabel">
+          <form id="form">
+        <p>Call Sifu Gary Mallia for any enquiries on: 0499 302 186</p>   
+            <label id="emailLabel" style={styles.hidden}>
               Email
             </label>
-            <input type="email" value={this.state.email} name="email" ref="email" onChange={this.handleInputChange} required/>
+            <input type="email" placeholder="Email address" value={this.state.email} name="email" ref="email" onChange={this.handleInputChange} required/>
             <div className="error" id="emailError" style={styles.error}>{this.state.emailErrorMessage}</div>
             <br />
-            <label id="messageLabel">
+            <label id="messageLabel" style={styles.hidden}>
               Message
             </label>
-            <textarea rows="5" cols="30" value={this.state.message} name="message" ref="message" onChange={this.handleInputChange} required></textarea>
+            <textarea rows="5" cols="30" placeholder="Message" value={this.state.message} name="message" ref="message" onChange={this.handleInputChange} required></textarea>
             <div className="error" id="messageError" style={styles.error}>{this.state.messageErrorMessage}</div>
             <br />
-            <Button onClick={this.handleSubmit}>Submit</Button>
+            <input type="submit" name="submit" value="Submit" onClick={this.handleSubmit} />
         </form>
       </div>
     )

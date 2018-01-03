@@ -5,7 +5,7 @@ import Footer from '../../common/Footer/Footer'
 import ContactUsForm from '../../common/ContactUsForm/ContactUsForm'
 
 //Content passed into body component
-var content = "<p>Contact us content</p>";
+var content = "";
 
 /**
 * Contact us page component used to render the page.

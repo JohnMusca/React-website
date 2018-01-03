@@ -24,6 +24,11 @@ class Header extends React.Component {
             <li><NavLink to="/contact_us/" activeClassName="selected">Contact</NavLink></li>
             <li><a href="https://www.instagram.com/buksingclfmelb/" title="Instagram" target="_blank">
               <img className="instagram-header-icon" src="/public/img/instagram-header-icon.png" alt="Instagram Icon" /></a></li>
+            
+            <li><a href="https://www.facebook.com/Buk-Sing-Choy-Lay-Fut-Kung-Fu-School-186276348584241/" title="Instagram" target="_blank">
+              <img className="instagram-header-icon" src="/public/img/FB-f-Logo__blue_29.png" alt="Facebook Icon" /></a></li>
+            
+            
           </ul>
         </nav>
     </div>

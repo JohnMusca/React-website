@@ -20,6 +20,8 @@ class Header extends React.Component {
             <li><Link to="/our_training">Our training</Link></li>
             <li><Link to="/about_the_class">About the class</Link></li>
             <li><Link to="/contact">Contact</Link></li>
+            <li><a href="https://www.instagram.com/buksingclfmelb/" title="Instagram" target="_blank">
+              <img className="instagram-header-icon" src="/public/img/instagram-header-icon.png" alt="Instagram Icon" /></a></li>
           </ul>
         </nav>
     </div>

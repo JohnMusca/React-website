@@ -93,7 +93,7 @@ class ContactUsForm extends React.Component {
       emailjs.init(Config.emailjs_user);
       emailjs.send(Config.emailjs_service_id, Config.emailjs_template_id,
                   {email  : this.refs.email.value, 
-                   message: this.refs.email.message});
+                   message: this.refs.message.value});
     }
 
     this.forceUpdate();

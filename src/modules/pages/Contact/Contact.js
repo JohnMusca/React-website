@@ -1,6 +1,5 @@
 import React from 'react'
 import HtmlToReact from 'html-to-react'
-import  Header from '../../common/Header/Header'
 import Body from '../../common/Body/Body'
 import Footer from '../../common/Footer/Footer'
 import ContactUsForm from '../../common/ContactUsForm/ContactUsForm'

@@ -1,7 +1,5 @@
 //eslint-disable jsx-a11y/alt-text
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Form,FormGroup, FormControl, Button } from 'react-bootstrap';
 
 //Config object used for emailjs vars
 const Config = require('../../config/config.json');
@@ -18,7 +16,9 @@ const styles = {
           } 
       };
 
-//The email validation regular expression we check against later
+//The email validation regular expression we check against later.
+//We ignore this error because it's a regex, not ES error (but linter picking it up).
+// eslint-disable-next-line
 const emailRegEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 /**
@@ -134,6 +134,9 @@ class ContactUsForm extends React.Component {
   showInputError(ref) {
     var validity = this.refs[ref].validity;
     var label    = document.getElementById(`${ref}Label`).textContent;
+    
+    //This is a silly error. We are using it, just inside setState
+    // eslint-disable-next-line
     var errorMessageField = `${ref}ErrorMessage`;
 
     const isEmail   = ref.indexOf('email') !== -1;

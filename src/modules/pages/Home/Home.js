@@ -4,7 +4,7 @@ import Body from '../../common/Body/Body'
 import Footer from '../../common/Footer/Footer'
 
 //content passed into body component
-const content = require('../../config/content/home.json').homepage.join(',');
+const content = require('../../config/content/home.json').homepage.join('');
 
 /**
 * Home page component used to render the page.

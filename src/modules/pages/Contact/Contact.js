@@ -9,7 +9,7 @@ import ContactUsForm from '../../common/ContactUsForm/ContactUsForm'
 var content = "";
 
 //Content to be used for google maps
-const content_google_map = require('../../config/content/contact_us.json').contact_us_google_map.join(',');
+const content_google_map = require('../../config/content/contact_us.json').contact_us_google_map.join('');
 
 
 /**

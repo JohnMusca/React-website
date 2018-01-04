@@ -2,9 +2,10 @@ import React from 'react'
 import Header from '../../common/Header/Header'
 import Body from '../../common/Body/Body'
 import Footer from '../../common/Footer/Footer'
+import JSONContent from '../../config/content/home.js' 
 
 //content passed into body component
-const content = require('../../config/content/home.json').homepage.join('');
+const content = JSONContent.homepage.join('');
 
 /**
 * Home page component used to render the page.

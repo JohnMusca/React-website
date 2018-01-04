@@ -1,4 +1,4 @@
-{
+var JSONContent = {
   "our_training":["<p>Our Training comprises a variety and combination of:</p>",
                     "<ul>",
                       "<li>Practical instruction of Buk Sing philosophies and applications;</li>",
@@ -17,3 +17,5 @@
                     "</ul>"],
   "our_training_instagram_link":["<span style='padding-left:10px;'><iframe src='//instagram.com/p/VID_ID/embed' width='230' height='300' frameborder='0' scrolling='no' allowtransperency='true'></iframe></span>"]
 }
+
+export default JSONContent

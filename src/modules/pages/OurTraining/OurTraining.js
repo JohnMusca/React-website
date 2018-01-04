@@ -2,13 +2,13 @@ import React from 'react'
 import Header from '../../common/Header/Header'
 import Body from '../../common/Body/Body'
 import Footer from '../../common/Footer/Footer'
-
+import JSONContent from '../../config/content/our_training.js' 
 
 //Content used to build instagram links
-const instagram_link = require('../../config/content/our_training.json').our_training_instagram_link.join('');
+const instagram_link = JSONContent.our_training_instagram_link.join('');
 
 //Content passed into body component.
-var content = require('../../config/content/our_training.json').our_training.join('');
+var content = JSONContent.our_training.join('');
 
 //adding our instagram links to content
 content +=  "<p>" + 

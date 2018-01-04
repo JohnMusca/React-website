@@ -2,9 +2,10 @@ import React from 'react'
 import Header from '../../common/Header/Header'
 import Body from '../../common/Body/Body'
 import Footer from '../../common/Footer/Footer'
+import JSONContent from '../../config/content/about_us.js' 
 
 //Content passed into body component
-const content = require('../../config/content/about_us.json').about_us.join('');
+const content = JSONContent.about_us.join('');
 
 /**
 * About the class page component used to render the page.

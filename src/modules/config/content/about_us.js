@@ -1,4 +1,4 @@
-{
+var JSONContent = {
   "about_us": ["<p>The Buk Sing Choy Lay Fut Kung Fu School services the Northern and Western suburbs and is located at 74 Melville Road, Brunswick West, which has immediate access to the suburbs of; Strathmore, Essendon, Pascoe Vale, Moonee Ponds, Ascot Vale, Maribyrnong, Kensington, Flemington, North Melbourne, Brunswick and Coburg.</p>",
               "<p>Training times are Tuesday and Thursday - 6:30pm to 8:30pm.</p>",
               "<p>Classes cater to all age groups, genders and backgrounds.</p>",
@@ -14,3 +14,5 @@
               "<p><img src='/img/john_bag_small.jpg' /></p>",
               "<p>Sifu Gary Mallia welcomes you to your Free Introductory Class and looks forward to assisting with what is considered a significant life changing experience.</p>"]
 }
+
+export default JSONContent;

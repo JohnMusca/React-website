@@ -193,13 +193,13 @@ class ContactUsForm extends React.Component {
             <label id="emailLabel" style={styles.hidden}>
               Email
             </label>
-            <input type="email" placeholder="Email address" value={this.state.email} name="email" ref="email" onChange={this.handleInputChange} required/>
+            <input type="email" placeholder="Email address" value={this.state.email} name="email" id="email" ref="email" onChange={this.handleInputChange} required/>
             <div className="error" id="emailError" style={styles.error}>{this.state.emailErrorMessage}</div>
             <br />
             <label id="messageLabel" style={styles.hidden}>
               Message
             </label>
-            <textarea rows="5" cols="30" placeholder="Message" value={this.state.message} name="message" ref="message" onChange={this.handleInputChange} required></textarea>
+            <textarea rows="5" cols="30" placeholder="Message" value={this.state.message} name="message" id="mssage" ref="message" onChange={this.handleInputChange} required></textarea>
             <div className="error" id="messageError" style={styles.error}>{this.state.messageErrorMessage}</div>
             <br />
             <input type="submit" name="submit" value="Submit" onClick={this.handleSubmit} />

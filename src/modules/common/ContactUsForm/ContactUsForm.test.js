@@ -3,7 +3,7 @@ import ContactUsForm from './ContactUsForm';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import { BrowserRouter, Link } from 'react-router-dom'
-import { configure, mount } from 'enzyme';
+import { configure, mount, find } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 configure({ adapter: new Adapter() });
@@ -21,9 +21,12 @@ describe('<MyComponent />', () => {
   it('handles on input change event', () => {
 
     const output = shallow(<ContactUsForm />);
+    const input = output.find('email');   
+    
+    output.instance().handleInputChange();
 
     expect(output.state().email).toEqual('');
-
+    expect(output.state().email).toEqual('John');
   });
 
 });

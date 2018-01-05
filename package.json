@@ -6,7 +6,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "storybook": "start-storybook -p 9001 -c .storybook",
+    "storybook": "start-storybook -p 9001 -c .storybook -s ./public",
     "test": "jest",
     "testcoverage": "jest --coverage"
   },
@@ -39,5 +39,9 @@
     "react-scripts": "^1.0.17"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.3.3",
+    "@storybook/addon-knobs": "^3.3.3",
+    "@storybook/addon-links": "^3.3.3",
+    "@storybook/addon-notes": "^3.3.3"
   }
 }

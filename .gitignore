@@ -2,3 +2,4 @@
 /coverage/
 *.swp
 /src/modules/config/config.json
+/build/

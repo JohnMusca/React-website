@@ -6,7 +6,7 @@
 ### usage
 
 ### run
-- npm start (serve site on localhost:8080)
+- npm start (serve site on localhost:3000)
 - Actual site needs config.json with the following values:
 -- { "emailjs_user": "", "emailjs_service_id":"", "emailjs_template_id":""} 
 

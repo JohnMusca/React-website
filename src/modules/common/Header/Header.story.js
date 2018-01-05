@@ -4,6 +4,8 @@ import { action } from '@storybook/addon-actions';
 import { BrowserRouter } from 'react-router-dom'
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/react';
 
+import '../../../../public/css/external_css.css'
+
 import Header from './Header'
 
 const stories = storiesOf('Storybook Knobs', module);

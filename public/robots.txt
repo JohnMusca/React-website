@@ -1,4 +1,2 @@
-User-agent *
-Disallow: /about_us/
-Disallow: /contact_us/
-Disallow: /our_training/
+User-agent: *
+Allow: /

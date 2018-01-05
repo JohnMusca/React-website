@@ -135,6 +135,8 @@ class ContactUsForm extends React.Component {
     var validity = this.refs[ref].validity;
     var label    = document.getElementById(`${ref}Label`).textContent;
     
+    var newState = this.state;
+    var errorString = '';      
     //This is a silly error. We are using it, just inside setState
     // eslint-disable-next-line
     var errorMessageField = `${ref}ErrorMessage`;
@@ -153,17 +155,23 @@ class ContactUsForm extends React.Component {
     //if our form isn't valid, then find what the error is and return the correct
     //message to the user. 
     if (!validity.valid) {
+
       if (validity.valueMissing) {
-        this.state[errorMessageField] = `${label} is a required field`; 	
+        errorString = `${label} is a required field`
       } else if (isEmail && !validity.email) {
-        this.state[errorMessageField] = `${label} is not a valid email address`; 
+        errorString = `${label} is not a valid email address`; 
       } 
+
+      //dynamically update key in state
+      newState[errorMessageField] = errorString;
+      this.setState({newState});
 
       return false;
     }
 
     //if no errors, blank out the error messages
-    this.state[errorMessageField] = '';
+    newState[errorMessageField] = '';
+    this.setState({newState});
     return true;
   }
 

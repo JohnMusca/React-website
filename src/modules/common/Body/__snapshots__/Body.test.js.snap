@@ -1,7 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Body component 1`] = `
-<div>
+<div
+  className="main"
+>
+  <h1>
+    Buk Sing Choy Lay Fut
+  </h1>
   <p>
     Defualt body content
   </p>

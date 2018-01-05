@@ -1,45 +1,101 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header component 1`] = `
-<div>
-  <h1>
-    Header
-  </h1>
-  <ul
-    role="nav"
+<header>
+  <div
+    id="wrap"
   >
-    <li>
-      <a
-        href="/"
-        onClick={[Function]}
-      >
-        Home
-      </a>
-    </li>
-    <li>
-      <a
-        href="/our_training"
-        onClick={[Function]}
-      >
-        Our training
-      </a>
-    </li>
-    <li>
-      <a
-        href="/about_the_class"
-        onClick={[Function]}
-      >
-        About the class
-      </a>
-    </li>
-    <li>
-      <a
-        href="/contact"
-        onClick={[Function]}
-      >
-        Contact
-      </a>
-    </li>
-  </ul>
-</div>
+    <a
+      aria-current={false}
+      className={undefined}
+      href="/"
+      onClick={[Function]}
+      style={undefined}
+    >
+      <img
+        alt="Logo"
+        className="logo"
+        src="/img/logo.png"
+      />
+    </a>
+    <nav
+      id="nav"
+    >
+      <ul>
+        <li>
+          <a
+            aria-current={false}
+            className={undefined}
+            href="/"
+            onClick={[Function]}
+            style={undefined}
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            aria-current={false}
+            className={undefined}
+            href="/our_training/"
+            onClick={[Function]}
+            style={undefined}
+          >
+            Our training
+          </a>
+        </li>
+        <li>
+          <a
+            aria-current={false}
+            className={undefined}
+            href="/about_us/"
+            onClick={[Function]}
+            style={undefined}
+          >
+            About the class
+          </a>
+        </li>
+        <li>
+          <a
+            aria-current={false}
+            className={undefined}
+            href="/contact_us/"
+            onClick={[Function]}
+            style={undefined}
+          >
+            Contact
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/buksingclfmelb/"
+            rel="noopener noreferrer"
+            target="_blank"
+            title="Instagram"
+          >
+            <img
+              alt="Instagram Icon"
+              className="instagram-header-icon"
+              src="/img/instagram-header-icon.png"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.facebook.com/Buk-Sing-Choy-Lay-Fut-Kung-Fu-School-186276348584241/"
+            rel="noopener noreferrer"
+            target="_blank"
+            title="Instagram"
+          >
+            <img
+              alt="Facebook Icon"
+              className="instagram-header-icon"
+              src="/img/FB-f-Logo__blue_29.png"
+            />
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
 `;

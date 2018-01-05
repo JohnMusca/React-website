@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ContactUsForm component 1`] = `
-<div>
+<div
+  className="main"
+>
   <div
     id="thankYouMessage"
     style={
@@ -17,14 +19,23 @@ exports[`ContactUsForm component 1`] = `
   <form
     id="form"
   >
+    <p>
+      Call Sifu Gary Mallia for any enquiries on: 0499 302 186
+    </p>
     <label
       id="emailLabel"
+      style={
+        Object {
+          "display": "none",
+        }
+      }
     >
       Email
     </label>
     <input
       name="email"
       onChange={[Function]}
+      placeholder="Email address"
       required={true}
       type="email"
       value=""
@@ -45,6 +56,11 @@ exports[`ContactUsForm component 1`] = `
     <br />
     <label
       id="messageLabel"
+      style={
+        Object {
+          "display": "none",
+        }
+      }
     >
       Message
     </label>
@@ -52,6 +68,7 @@ exports[`ContactUsForm component 1`] = `
       cols="30"
       name="message"
       onChange={[Function]}
+      placeholder="Message"
       required={true}
       rows="5"
       value=""
@@ -70,14 +87,12 @@ exports[`ContactUsForm component 1`] = `
       
     </div>
     <br />
-    <button
-      className="btn btn-default"
-      disabled={false}
+    <input
+      name="submit"
       onClick={[Function]}
-      type="button"
-    >
-      Submit
-    </button>
+      type="submit"
+      value="Submit"
+    />
   </form>
 </div>
 `;

@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Footer component 1`] = `
-<div>
+<footer>
   <p>
     © 
     2018
-     Bussiness Name
+     Buk Sing Melbourne
   </p>
-</div>
+</footer>
 `;

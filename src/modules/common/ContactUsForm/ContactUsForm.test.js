@@ -3,8 +3,8 @@ import ContactUsForm from './ContactUsForm';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import { BrowserRouter, Link } from 'react-router-dom'
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-15';
+import { configure, mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
 configure({ adapter: new Adapter() });
 

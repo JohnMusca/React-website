@@ -25,14 +25,19 @@ describe('<MyComponent />', () => {
 
     //when showInputError(ref) is called, simulate return false
     //use a stub
+    output.instance().showInputError = jest.fn();
+    output.update();
 
+    //mock the target object
     const mockEvent = {target: {classList: new Object()},
                        name: {validity:false}}
     mockEvent.target.classList.add = jest.fn();
    
     output.instance().handleInputChange(mockEvent);
 
+    //our assertions
     expect(output.state().email).toEqual('');
-    expect(output.state().email).toEqual('John');
+    output.simulate('keypress', {key: 'J'});
+    expect(output.state().email).toEqual('J');
   });
 });

@@ -22,8 +22,15 @@ describe('<MyComponent />', () => {
 
     const output = shallow(<ContactUsForm />);
     const input = output.find('email');   
+
+    const mockEvent = {target: {classList: ''}}
+
+    //const bound = mockEvent.bind(target);
+    //bound();
+
+    console.log(mockEvent.target);
     
-    output.instance().handleInputChange();
+    output.instance().handleInputChange(mockEvent);
 
     expect(output.state().email).toEqual('');
     expect(output.state().email).toEqual('John');

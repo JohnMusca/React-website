@@ -23,30 +23,12 @@ describe('<MyComponent />', () => {
     const output = shallow(<ContactUsForm />);
     const input = output.find('email');   
 
-    const mockEvent = {target: {classList: ''}}
-
-    //const bound = mockEvent.bind(target);
-    //bound();
-
-    console.log(mockEvent.target);
+    const mockEvent = {target: {classList: new Object()}}
+    mockEvent.target.classList.add = jest.fn();
     
     output.instance().handleInputChange(mockEvent);
 
     expect(output.state().email).toEqual('');
     expect(output.state().email).toEqual('John');
   });
-
 });
-/*
-test('ContactUsForm component', () => {
-  it('should make sure snapshot is what we expect', () => {
-  }),
-  it('should handle input change event', () => {
-    
-  const output = shallow(<ContactUsForm />
-  
-  //expect(output.state.email).toEqual('');
-  //output.simulate();
-  //expect(output.state().email).toEqual('test@test.com');
-  })
-});*/

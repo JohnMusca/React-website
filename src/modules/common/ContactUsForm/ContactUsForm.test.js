@@ -1,9 +1,8 @@
 import React from 'react';
 import ContactUsForm from './ContactUsForm';
 import renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
-import { BrowserRouter, Link } from 'react-router-dom'
-import { configure, mount, find } from 'enzyme';
+import { BrowserRouter, Link} from 'react-router-dom'
+import { shallow, configure, mount, find, ref } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 configure({ adapter: new Adapter() });
@@ -17,15 +16,20 @@ describe('<MyComponent />', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
-
+ 
   it('handles on input change event', () => {
 
-    const output = shallow(<ContactUsForm />);
-    const input = output.find('email');   
+    const output = mount(<ContactUsForm />);
+    var input = output.find('email');   
+    input.name = "email"
 
-    const mockEvent = {target: {classList: new Object()}}
+    //when showInputError(ref) is called, simulate return false
+    //use a stub
+
+    const mockEvent = {target: {classList: new Object()},
+                       name: {validity:false}}
     mockEvent.target.classList.add = jest.fn();
-    
+   
     output.instance().handleInputChange(mockEvent);
 
     expect(output.state().email).toEqual('');

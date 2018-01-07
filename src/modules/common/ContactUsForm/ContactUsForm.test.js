@@ -63,7 +63,7 @@ describe('<MyComponent />', () => {
 
   //showFormErrors method
   it('handles showFormErrors', () => {
-    const output = mount(<ContactUsForm />, { attachTo: document.body }); 
+    const output = mount(<ContactUsForm />); 
 
     output.ref('email').validity = new Object;
     output.ref('email').validity.valid = false;
@@ -78,7 +78,7 @@ describe('<MyComponent />', () => {
 
   it('handles handlesubmit', () => {
     
-    const output = mount(<ContactUsForm />, { attachTo: document.body});
+    const output = mount(<ContactUsForm />);
 
     output.instance.showFormErrors = false;
 

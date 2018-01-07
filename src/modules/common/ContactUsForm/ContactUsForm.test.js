@@ -92,10 +92,22 @@ describe('<MyComponent />', () => {
     //isValid is set to false, so expecting false
     output.instance().handleSubmit(eventVar)
    
-    //console.log(output.find('div').at(1).debug());
-    
     //compare the 2nd div (the thankyoumessage one)
-    //expect(output.find('div').at(1).style).toEqual('display:none');
+    expect(output.find('div').at(1).prop('style').display).toEqual('none');
 
+    //now we've tested with false, lets test a positive case
+
+    output.ref('email').validity.valid = true;
+    output.ref('message').validity.valid = true;
+
+    //isValid is set to false, so expecting false
+    output.instance().handleSubmit(eventVar)
+   
+    output.instance().window = new Object;
+    output.instance().window.emailjs = new Object;
+    output.instance().window.emailjs.init = jest.fn();
+
+    //compare the 2nd div (the thankyoumessage one)
+    expect(output.find('div').at(1).prop('style').display).toEqual('inline');
   });
 });

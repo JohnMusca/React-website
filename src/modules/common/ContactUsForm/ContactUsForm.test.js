@@ -77,6 +77,7 @@ describe('<MyComponent />', () => {
   });
 
   it('handles handlesubmit', () => {
+    
     const output = mount(<ContactUsForm />, { attachTo: document.body});
 
     output.instance.showFormErrors = false;
@@ -84,6 +85,7 @@ describe('<MyComponent />', () => {
     const eventVar = new Object();
     eventVar.preventDefault = jest.fn();
 
+    //mock the input ref validity values
     output.ref('email').validity = new Object;
     output.ref('email').validity.valid = false;
     output.ref('message').validity = new Object;
@@ -97,17 +99,20 @@ describe('<MyComponent />', () => {
 
     //now we've tested with false, lets test a positive case
 
+    //remock the email and message validity objects
     output.ref('email').validity.valid = true;
     output.ref('message').validity.valid = true;
+
+    //mock the window emailjs functions to send emails.
+    global.emailjs = new Object;
+    global.emailjs.init = jest.fn();
+    global.emailjs.send = jest.fn();
 
     //isValid is set to false, so expecting false
     output.instance().handleSubmit(eventVar)
    
-    output.instance().window = new Object;
-    output.instance().window.emailjs = new Object;
-    output.instance().window.emailjs.init = jest.fn();
-
     //compare the 2nd div (the thankyoumessage one)
     expect(output.find('div').at(1).prop('style').display).toEqual('inline');
+    //compare the next div to ensure the form is hidden
   });
 });

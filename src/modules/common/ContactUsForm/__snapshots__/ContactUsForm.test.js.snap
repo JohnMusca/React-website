@@ -67,7 +67,7 @@ exports[`<MyComponent /> renders a contctUsFormComponent 1`] = `
     </label>
     <textarea
       cols="30"
-      id="mssage"
+      id="message"
       name="message"
       onChange={[Function]}
       placeholder="Message"

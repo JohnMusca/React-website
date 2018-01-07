@@ -199,7 +199,7 @@ class ContactUsForm extends React.Component {
             <label id="messageLabel" style={styles.hidden}>
               Message
             </label>
-            <textarea rows="5" cols="30" placeholder="Message" value={this.state.message} name="message" id="mssage" ref="message" onChange={this.handleInputChange} required></textarea>
+            <textarea rows="5" cols="30" placeholder="Message" value={this.state.message} name="message" id="message" ref="message" onChange={this.handleInputChange} required></textarea>
             <div className="error" id="messageError" style={styles.error}>{this.state.messageErrorMessage}</div>
             <br />
             <input type="submit" name="submit" value="Submit" onClick={this.handleSubmit} />

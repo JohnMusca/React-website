@@ -44,6 +44,7 @@ exports[`Contact component 1`] = `
         Email
       </label>
       <input
+        id="email"
         name="email"
         onChange={[Function]}
         placeholder="Email address"
@@ -77,6 +78,7 @@ exports[`Contact component 1`] = `
       </label>
       <textarea
         cols="30"
+        id="message"
         name="message"
         onChange={[Function]}
         placeholder="Message"

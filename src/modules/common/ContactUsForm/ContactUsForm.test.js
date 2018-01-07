@@ -112,8 +112,6 @@ describe('<MyComponent />', () => {
     output.instance().handleSubmit(eventVar)
     output.update();
 
-    console.log(output.find('div').at(1).debug());
-  
     //compare the 2nd div (the thankyoumessage one)
     expect(output.find('div').at(1).prop('style').display).toEqual('none');
     //compare the next div to ensure the form is hidden

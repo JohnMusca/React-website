@@ -62,4 +62,25 @@ describe('<MyComponent />', () => {
     expect(output.instance().showInputError('email')).toEqual(false);
 
   });
+
+  //showFormErrors method
+  it('handles showFormErrors', () => {
+    const output = mount(<ContactUsForm />, { attachTo: document.body }); 
+
+    output.ref('email').validity = new Object;
+    output.ref('email').validity.valid = false;
+    output.ref('message').validity = new Object;
+    output.ref('message').validity.valid = false;
+
+    output.instance.showInputError = jest.fn();
+    output.update();
+
+    expect(output.instance().showFormErrors()).toEqual(false);
+  });
+
+  it('handles handlesubmit', () => {
+    const output = mount(<ContactUsForm />);
+
+
+  });
 });

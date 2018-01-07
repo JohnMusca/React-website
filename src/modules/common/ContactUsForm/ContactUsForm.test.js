@@ -30,11 +30,11 @@ describe('<MyComponent />', () => {
     output.update();
 
     //manually mock the event we pass in
-    var mockEvent = new Object();
+    var mockEvent = {};
     mockEvent.target = new Object();
     mockEvent.target.classList = new Object();
     mockEvent.target.name = {validity:false};
-    mockEvent.target.value = "John";
+    mockEvent.target.value = "John@test.com";
 
     //mock the target object
     mockEvent.target.classList.add = jest.fn();
@@ -43,10 +43,11 @@ describe('<MyComponent />', () => {
 
     //our assertions
     expect(output.state().email).toEqual('');
-   
-    //find email input
-    output.find('input').first().simulate('change', { target: { value: 'J' } });
-    expect(output.state().email).toEqual('J');
+  
+    //find email input and test it for value change
+    output.state().email = mockEvent.target.value;
+    output.find('input').first().simulate('change', {target:  mockEvent.target });
+    expect(output.state().email).toEqual('John@test.com');
     //console.log(output.debug());
     //console.log(output.find('input').debug());
   });

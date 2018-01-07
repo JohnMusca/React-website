@@ -21,8 +21,6 @@ describe('<MyComponent />', () => {
   it('handles on input change event', () => {
 
     const output = mount(<ContactUsForm />);
-    var input = output.find('input').first();   
-    input.name = "email"
 
     //when showInputError(ref) is called, simulate return false
     //use a stub
@@ -79,8 +77,25 @@ describe('<MyComponent />', () => {
   });
 
   it('handles handlesubmit', () => {
-    const output = mount(<ContactUsForm />);
+    const output = mount(<ContactUsForm />, { attachTo: document.body});
 
+    output.instance.showFormErrors = false;
+
+    const eventVar = new Object();
+    eventVar.preventDefault = jest.fn();
+
+    output.ref('email').validity = new Object;
+    output.ref('email').validity.valid = false;
+    output.ref('message').validity = new Object;
+    output.ref('message').validity.valid = false;
+
+    //isValid is set to false, so expecting false
+    output.instance().handleSubmit(eventVar)
+   
+    //console.log(output.find('div').at(1).debug());
+    
+    //compare the 2nd div (the thankyoumessage one)
+    //expect(output.find('div').at(1).style).toEqual('display:none');
 
   });
 });

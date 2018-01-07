@@ -48,27 +48,28 @@ describe('<MyComponent />', () => {
     output.state().email = mockEvent.target.value;
     output.find('input').first().simulate('change', {target:  mockEvent.target });
     expect(output.state().email).toEqual('John@test.com');
+
+    //console.log(output.instance().showInputError('email'));
+    //expect(output.instance().showInputError('email')).toEqual(false);
     //console.log(output.debug());
     //console.log(output.find('input').debug());
   });
 
   //showInputError method
   it('handles showInputError method', () => {
-
+/*
     const output = mount(<ContactUsForm />, { attachTo: document.body });
 
-    //keeping in comments because i forget how to debug
-    //console.log(output.debug());
-
-    var input = output.find('input').first();   
-    //console.log(input);
-
-    //output.target.classList.add = jest.fn();
-
-    //input.simulate('change', { target: { value: 'Hello' } })
-
-    //use email first
-    //output.instance().showInputError('email');
+    var mockEvent = {};
+    mockEvent.target = new Object();
+    mockEvent.target.classList = new Object();
+    mockEvent.target.name = {validity:false};
+    mockEvent.target.value = "John@test.com";
     
+    output.instance().handleInputChange(mockEvent);
+
+    output.find('input').first().simulate('change', {target:  mockEvent.target });
+
+  */   
   });
 });

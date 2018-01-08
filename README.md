@@ -6,9 +6,14 @@
 ### usage
 
 ### run
-- npm start (serve site on localhost:3000)
+-- dev:
+- npm dev (serve site on localhost:3000)
 - Actual site needs config.json with the following values:
 -- { "emailjs_user": "", "emailjs_service_id":"", "emailjs_template_id":""} 
+
+--prod:
+npm run build
+npm start (serve site on localhost:5000)
 
 ### content
 content is stored in json data files as html:
@@ -20,6 +25,3 @@ src/modules/config
 ### test coverage
 - npm run test (snapshot and enzyme tests)
 - npm run testcoverage (test coverage analysis)
-
-### grunt prod
-- minize, uglify

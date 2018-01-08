@@ -40,13 +40,19 @@ describe('<MyComponent />', () => {
     //our assertions
     expect(output.state().email).toEqual('');
   
-    //find email input and test it for value change
+    //find email input and test it for value change (with validity = false)
     output.state().email = mockEvent.target.value;
     output.find('input').first().simulate('change', {target:  mockEvent.target });
     expect(output.state().email).toEqual('John@test.com');
 
     //console.log(output.debug());
     //console.log(output.find('input').debug());
+
+    mockEvent.target.name = {validity:true}; 
+    //find email input and test it for value change (with validity = true)
+    output.state().email = mockEvent.target.value;
+    output.find('input').first().simulate('change', {target:  mockEvent.target });
+    expect(output.state().email).toEqual('John@test.com');
   });
 
   //showInputError method

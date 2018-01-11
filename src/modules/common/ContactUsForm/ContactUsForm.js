@@ -4,6 +4,9 @@ import React from 'react';
 //Config object used for emailjs vars
 const Config = require('../../config/config.json');
 
+//add our forbidden input (anti spam field)
+const spamField = "forbiddenInput";
+
 //Styles used by html input elements
 const styles = {
           error:  {
@@ -42,6 +45,7 @@ class ContactUsForm extends React.Component {
     
     this.state = { email              : '',
                    message            : '',
+                   forbiddenInput     : '',
                    emailErrorMessage  : '',
                    messageErrorMessage: '' };
 
@@ -88,18 +92,40 @@ class ContactUsForm extends React.Component {
     var isValid = this.showFormErrors();
  
     if(isValid) {
-      document.getElementById('thankYouMessage').style="display:inline;"
-      document.getElementById('form').style="display:none;"
 
-      window.emailjs.init(Config.emailjs_user);
-      window.emailjs.send(Config.emailjs_service_id, Config.emailjs_template_id,
-                  {email  : this.refs.email.value, 
-                   message: this.refs.message.value});
+      if( this.isNotSpamSubmission(spamField) ) {
+
+        document.getElementById('thankYouMessage').style="display:inline;"
+        document.getElementById('form').style="display:none;"
+
+        window.emailjs.init(Config.emailjs_user);
+        window.emailjs.send(Config.emailjs_service_id, Config.emailjs_template_id,
+                    {email  : this.refs.email.value, 
+                     message: this.refs.message.value});
+      }
     }
 
     this.forceUpdate();
 
   }	
+
+  /**
+  * isSpamSubmission checks for a hidden field which should not be set and returns false if it is
+  *
+  * @param string spamField
+  *
+  * @return boolean Returns true if no spam
+  */
+  isNotSpamSubmission(spamField) {
+  
+    var spamFieldValue = document.getElementById(spamField).value;
+
+    if(spamFieldValue.length !== 0) {
+      return false;
+    }
+    
+    return true; 
+  }
 
   /**
   * Shows the form errors (triggered by an onclick of the form).
@@ -193,6 +219,8 @@ class ContactUsForm extends React.Component {
             <label id="emailLabel" style={styles.hidden}>
               Email
             </label>
+            <label id="forbiddenInputLabel"></label>
+            <input type="input" name="forbiddenInput" id="forbiddenInput" ref="forbiddenInput" value={this.state.forbiddenInput} onChange={this.handleInputChange} />
             <input type="email" placeholder="Email address" value={this.state.email} name="email" id="email" ref="email" onChange={this.handleInputChange} required/>
             <div className="error" id="emailError" style={styles.error}>{this.state.emailErrorMessage}</div>
             <br />

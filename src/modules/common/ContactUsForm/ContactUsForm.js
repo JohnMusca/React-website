@@ -219,8 +219,6 @@ class ContactUsForm extends React.Component {
             <label id="emailLabel" style={styles.hidden}>
               Email
             </label>
-            <label id="forbiddenInputLabel"></label>
-            <input type="input" name="forbiddenInput" id="forbiddenInput" ref="forbiddenInput" value={this.state.forbiddenInput} onChange={this.handleInputChange} />
             <input type="email" placeholder="Email address" value={this.state.email} name="email" id="email" ref="email" onChange={this.handleInputChange} required/>
             <div className="error" id="emailError" style={styles.error}>{this.state.emailErrorMessage}</div>
             <br />
@@ -230,6 +228,8 @@ class ContactUsForm extends React.Component {
             <textarea rows="5" cols="30" placeholder="Message" value={this.state.message} name="message" id="message" ref="message" onChange={this.handleInputChange} required></textarea>
             <div className="error" id="messageError" style={styles.error}>{this.state.messageErrorMessage}</div>
             <br />
+            <label id="forbiddenInputLabel" style={styles.hidden}></label>
+            <input type="input" style={styles.hidden} name="forbiddenInput" id="forbiddenInput" ref="forbiddenInput" value={this.state.forbiddenInput} onChange={this.handleInputChange} />
             <input type="submit" name="submit" value="Submit" onClick={this.handleSubmit} />
         </form>
       </div>

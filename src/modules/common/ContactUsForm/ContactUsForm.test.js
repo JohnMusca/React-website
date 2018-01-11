@@ -53,6 +53,9 @@ describe('<MyComponent />', () => {
     output.state().email = mockEvent.target.value;
     output.find('input').first().simulate('change', {target:  mockEvent.target });
     expect(output.state().email).toEqual('John@test.com');
+
+    //handleinputchange for forbidden field
+    output.state().forbiddenField = mockEvent.target.value;
   });
 
   //showInputError method
@@ -121,5 +124,12 @@ describe('<MyComponent />', () => {
     //compare the 2nd div (the thankyoumessage one)
     expect(output.find('div').at(1).prop('style').display).toEqual('none');
     //compare the next div to ensure the form is hidden
+
+    //testing for hidden spam field, send emails if it's not populated
+    expect(output.state().forbiddenInput).toEqual('');
+
+    //don't send emails if it's populated
+    output.state().forbiddenInput = 'test';
+    expect(output.state().forbiddenInput).toEqual('test');
   });
 });

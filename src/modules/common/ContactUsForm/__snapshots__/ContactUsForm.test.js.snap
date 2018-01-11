@@ -89,6 +89,26 @@ exports[`<MyComponent /> renders a contctUsFormComponent 1`] = `
       
     </div>
     <br />
+    <label
+      id="forbiddenInputLabel"
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    />
+    <input
+      id="forbiddenInput"
+      name="forbiddenInput"
+      onChange={[Function]}
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+      type="input"
+      value=""
+    />
     <input
       name="submit"
       onClick={[Function]}

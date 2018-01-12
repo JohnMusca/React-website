@@ -4,9 +4,6 @@ import React from 'react';
 //Config object used for emailjs vars
 const Config = require('../../config/config.json');
 
-//add our forbidden input (anti spam field)
-const spamField = "forbiddenInput";
-
 //Styles used by html input elements
 const styles = {
           error:  {
@@ -93,7 +90,7 @@ class ContactUsForm extends React.Component {
  
     if(isValid) {
 
-      if( this.isNotSpamSubmission(spamField) ) {
+      if( this.isNotSpamSubmission() ) {
 
         document.getElementById('thankYouMessage').style="display:inline;"
         document.getElementById('form').style="display:none;"
@@ -116,9 +113,9 @@ class ContactUsForm extends React.Component {
   *
   * @return boolean Returns true if no spam
   */
-  isNotSpamSubmission(spamField) {
+  isNotSpamSubmission() {
   
-    var spamFieldValue = document.getElementById(spamField).value;
+    var spamFieldValue = this.state.forbiddenInput;//document.getElementById(spamField).value;
 
     if(spamFieldValue.length !== 0) {
       return false;

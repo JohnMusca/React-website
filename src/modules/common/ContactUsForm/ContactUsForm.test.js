@@ -132,4 +132,20 @@ describe('<MyComponent />', () => {
     output.state().forbiddenInput = 'test';
     expect(output.state().forbiddenInput).toEqual('test');
   });
+  
+  /**
+  * Test the isNotSpamSubmission method
+  */
+  it('isNotSpamSubmission should work', () => {
+    const output = mount(<ContactUsForm />);
+
+    //test method with no data in it.
+    output.state().forbiddenInput = '';
+    expect(output.instance().isNotSpamSubmission(spamField)).toEqual(true);
+
+    //test method with data in it.
+    output.state().forbiddenInput = 'test';
+    expect(output.instance().isNotSpamSubmission(spamField)).toEqual(false);
+
+  });
 });

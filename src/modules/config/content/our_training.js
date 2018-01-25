@@ -15,7 +15,7 @@ var JSONContent = {
                       "<li>Physical Fitness and Well Being;</li>",
                       "<li>Flexibility, Balance and Co-Ordination.</li>",
                     "</ul>"],
-  "our_training_instagram_link":["<span style='padding-left:10px;'><iframe src='//instagram.com/p/VID_ID/embed' width='230' height='300' frameborder='0' scrolling='no' allowtransperency='true'></iframe></span>"]
+  "our_training_instagram_link":["<span style='padding-left:10px;'><iframe src='//instagram.com/p/VID_ID/embed' width='230' height='290' frameborder='0' scrolling='no' allowtransperency='true'></iframe></span>"]
 }
 
 export default JSONContent

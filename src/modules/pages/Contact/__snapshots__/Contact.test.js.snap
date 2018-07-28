@@ -100,6 +100,26 @@ exports[`Contact component 1`] = `
         
       </div>
       <br />
+      <label
+        id="forbiddenInputLabel"
+        style={
+          Object {
+            "display": "none",
+          }
+        }
+      />
+      <input
+        id="forbiddenInput"
+        name="forbiddenInput"
+        onChange={[Function]}
+        style={
+          Object {
+            "display": "none",
+          }
+        }
+        type="input"
+        value=""
+      />
       <input
         name="submit"
         onClick={[Function]}
@@ -123,7 +143,7 @@ exports[`Contact component 1`] = `
       marginHeight="0"
       marginWidth="0"
       scrolling="no"
-      src="http://maps.google.com.au/maps?f=q&source=s_q&hl=en&geocode=&q=74+Melville+Road,+Brunswick+West,+Victoria&aq=0&oq=74+Melville+Road&sll=-37.762836,144.94417&sspn=0.00754,0.016512&ie=UTF8&hq=&hnear=74+Melville+Rd,+Brunswick+West+Victoria+3055&t=m&z=14&ll=-37.762836,144.94417&output=embed"
+      src="https://maps.google.com.au/maps?f=q&source=s_q&hl=en&geocode=&q=74+Melville+Road,+Brunswick+West,+Victoria&aq=0&oq=74+Melville+Road&sll=-37.762836,144.94417&sspn=0.00754,0.016512&ie=UTF8&hq=&hnear=74+Melville+Rd,+Brunswick+West+Victoria+3055&t=m&z=14&ll=-37.762836,144.94417&output=embed"
       width="425"
     />
   </div>

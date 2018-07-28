@@ -141,11 +141,11 @@ describe('<MyComponent />', () => {
 
     //test method with no data in it.
     output.state().forbiddenInput = '';
-    expect(output.instance().isNotSpamSubmission(spamField)).toEqual(true);
+    expect(output.instance().isNotSpamSubmission()).toEqual(true);
 
     //test method with data in it.
     output.state().forbiddenInput = 'test';
-    expect(output.instance().isNotSpamSubmission(spamField)).toEqual(false);
+    expect(output.instance().isNotSpamSubmission()).toEqual(false);
 
   });
 });

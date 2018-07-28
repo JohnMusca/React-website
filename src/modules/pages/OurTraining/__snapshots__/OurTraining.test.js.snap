@@ -62,7 +62,7 @@ exports[`OurTraining component 1`] = `
         <iframe
           allowtransperency="true"
           frameBorder="0"
-          height="300"
+          height="290"
           scrolling="no"
           src="//instagram.com/p/BZe5g8QjVyw/embed"
           width="230"
@@ -78,7 +78,7 @@ exports[`OurTraining component 1`] = `
         <iframe
           allowtransperency="true"
           frameBorder="0"
-          height="300"
+          height="290"
           scrolling="no"
           src="//instagram.com/p/BcUS3zMDONZ/embed"
           width="230"
@@ -94,7 +94,7 @@ exports[`OurTraining component 1`] = `
         <iframe
           allowtransperency="true"
           frameBorder="0"
-          height="300"
+          height="290"
           scrolling="no"
           src="//instagram.com/p/BZXa8wgjSr7/embed"
           width="230"

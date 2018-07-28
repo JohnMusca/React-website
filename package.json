@@ -17,6 +17,10 @@
     "node": "8.0.0",
     "npm": "5.6.0"
   },
+  "jest": {
+    "verbose": true,
+    "testURL": "http://localhost/"
+  },
   "dependencies": {
     "@storybook/react": "^3.3.3",
     "babel-core": "^6.5.1",
@@ -36,7 +40,7 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "^1.0.17",
     "react-test-renderer": "^16.2.0",
-    "serve": "^6.4.4",
+    "serve": "^7.0.0",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.7"
   },

@@ -7,14 +7,13 @@
 
 ### run
 -- dev:
-- npm dev (serve site on localhost:3000)
+- npm run dev (serve site on localhost:3000)
 - Actual site needs config.json with the following values:
 -- { "emailjs_user": "", "emailjs_service_id":"", "emailjs_template_id":""} 
 
 --prod:
 npm run build
 npm start (serve site on localhost:5000)
-
 ### content
 content is stored in json data files as html:
 src/modules/config

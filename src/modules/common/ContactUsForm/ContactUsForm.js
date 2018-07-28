@@ -115,7 +115,7 @@ class ContactUsForm extends React.Component {
   */
   isNotSpamSubmission() {
   
-    var spamFieldValue = this.state.forbiddenInput;//document.getElementById(spamField).value;
+    var spamFieldValue = this.state.forbiddenInput;
 
     if(spamFieldValue.length !== 0) {
       return false;

@@ -6,11 +6,11 @@ exports[`Header component 1`] = `
     id="wrap"
   >
     <a
-      aria-current={false}
-      className={undefined}
+      aria-current="true"
+      className="active"
       href="/"
       onClick={[Function]}
-      style={undefined}
+      style={Object {}}
     >
       <img
         alt="Logo"
@@ -24,11 +24,11 @@ exports[`Header component 1`] = `
       <ul>
         <li>
           <a
-            aria-current={false}
-            className={undefined}
+            aria-current="true"
+            className="selected"
             href="/"
             onClick={[Function]}
-            style={undefined}
+            style={Object {}}
           >
             Home
           </a>

@@ -63,13 +63,18 @@ describe('<MyComponent />', () => {
 
     const output = mount(<ContactUsForm />, { attachTo: document.body });
 
-    //mock the ref
+    //mock the email validity ref
     output.ref('email').validity = new Object;
 
     expect(output.instance().showInputError('email')).toEqual(false);
 
-    //mock the ref
+    //mock the email ref value
     output.ref('email').value = 'valid@test.com';
+
+    expect(output.instance().showInputError('email')).toEqual(false);
+
+    //mock the validity valueMissing value
+    output.ref('email').validity.valueMissing = true;
 
     expect(output.instance().showInputError('email')).toEqual(false);
   });

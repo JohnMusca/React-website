@@ -68,6 +68,10 @@ describe('<MyComponent />', () => {
 
     expect(output.instance().showInputError('email')).toEqual(false);
 
+    //mock the ref
+    output.ref('email').value = 'valid@test.com';
+
+    expect(output.instance().showInputError('email')).toEqual(false);
   });
 
   //showFormErrors method

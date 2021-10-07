@@ -212,7 +212,7 @@ class ContactUsForm extends React.Component {
           <p>Thanks for submitting your enquiry. We'll get back to you shortly</p>
         </div> 
           <form id="form">
-        <p>Call Sifu Gary Mallia for any enquiries on: 0499 302 186</p>   
+        <p>Call Sifu Gary Mallia for any enquiries on: 0419 557 502</p>   
             <label id="emailLabel" style={styles.hidden}>
               Email
             </label>

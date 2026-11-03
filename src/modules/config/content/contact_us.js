@@ -1,5 +1,5 @@
 var JSONContent = {
-  "contact_us_google_map":["<iframe width='425' height='350' frameBorder='0' scrolling='no' marginHeight='0' marginWidth='0' src='https://maps.google.com.au/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=74+Melville+Road,+Brunswick+West,+Victoria&amp;aq=0&amp;oq=74+Melville+Road&amp;sll=-37.762836,144.94417&amp;sspn=0.00754,0.016512&amp;ie=UTF8&amp;hq=&amp;hnear=74+Melville+Rd,+Brunswick+West+Victoria+3055&amp;t=m&amp;z=14&amp;ll=-37.762836,144.94417&amp;output=embed'></iframe>"]
+  "contact_us_google_map":["<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3154.838280527582!2d144.9466286752842!3d-37.746938030221074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65b5a1c372a87%3A0x32e6243c1097233f!2s250%20Reynard%20St%2C%20Coburg%20VIC%203058!5e0!3m2!1sen!2sau!4v1793696101292!5m2!1sen!2sau\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"strict-origin-when-cross-origin\"></iframe>"]
 }
 
 export default JSONContent

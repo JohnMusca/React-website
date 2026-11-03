@@ -36,7 +36,7 @@ class Contact extends React.Component {
        
         <div className="main">
         <h1>Our address</h1>
-        <p>74 Melville Road, Brunswick West VIC 3055</p>      
+        <p>250 Reynard St, Coburg VIC 3058</p>      
       
         {map_content}
   
